@@ -1,0 +1,120 @@
+body{
+          background: url("../images/RudyGobert.jpeg") no-repeat center;
+            
+            background-size: cover;
+            text-align: -webkit-left;
+            -webkit-background-size: cover;
+            }
+.navbar{
+   
+    background-color: #002B5C;
+    border-bottom: solid 4px #F9A01B ;
+    text-align: center;
+    justify-content: center;
+    padding: .5rem 1rem;
+
+    
+  background: #002B5C;
+  -webkit-animation: mymove 5s infinite; /* Safari 4.0 - 8.0 */
+  animation: mymove 5s infinite;
+}
+
+
+@-webkit-keyframes mymove {
+  50% {background-color: #00471B;}
+}
+
+@keyframes mymove {
+  50% {background-color: #00471B;}
+}
+img{
+    vertical-align: middle;
+    border-style: inset;
+    border-color: #F9A01B;
+}
+    
+button{
+    background-color: #00471B;
+    color: white;
+}
+button:hover{
+    background-color: #F9A01B;
+    font-size: 120%;
+    color: #00471B;
+    transform: scale(1.1)
+}
+#jazz{
+    font-family: 'Cinzel', serif;
+    color: #F9A01B;
+    text-align: center;
+    font-size: 32px;
+}
+h1{
+    font-size: 64px;
+    padding: 20px;
+}
+
+.triviaBox{
+    width: 700px;
+    height: auto;
+    margin-top: 100px;
+    margin-left: 40px;
+    margin-right: 40px;
+    padding: 25px;
+    
+    background-color: #002B5C;
+    box-shadow: 0px 0px 5px 5px #F9A01B;
+     
+  opacity: 0.9;
+  filter: alpha(opacity=60);
+  font-weight: bold;
+  
+}
+#rules{
+    color: #F9A01B;
+    font-size: 33px;
+    font-family: 'Cinzel', serif;
+    font-weight: 400;
+    padding: 5px;
+    margin: 20px;
+
+}
+#timer{
+    color: #F9A01B;
+    font-size: 33px;
+    font-family: 'Cinzel', serif;
+    font-weight: 400;
+    padding: 5px;
+    margin: 20px;
+}
+
+#start{
+    background-color: #00471B;
+    font-family: 'Cinzel', serif;
+    color: #F9A01B;
+    font-size: 26px;
+}
+p{
+    font-size: 14px;
+    color: #F9A01B;
+    text-align: left;
+    
+}
+
+
+
+
+
+footer{
+            clear: both;
+            background-color:  #002B5C;;
+            text-align: center;
+            padding: 10px;
+            color: #00471B;
+            margin-bottom: -10px;
+            border-top: 4px #F9A01B solid;
+            margin-right: -10px;
+            margin-left: -10px;
+            margin-top: 200px;
+            
+}
