@@ -9,7 +9,7 @@ var questions = [
             c: "Chicago Bulls",
             d: "Seattle Sonics"
         },
-        correctAnswer: "a"
+        correctAnswer: "Houston Rockets"
 
     },
     {
@@ -186,13 +186,13 @@ function setupPage() {
                 console.log( questions[i].answers.length ); {
 
                 //button for "a" choice
-                var b = $( "<button>" );
-                $( b ).attr( "data-choices" + i );
-                $( b ).attr( "answers", i );
-                $( b ).text( questions[i].answers );
-                $( "#questionsdiv" ).append( b );
+                var a = $( "<button>" );
+                $( a ).attr( "data-choices" + i );
+                $( a ).attr( "answers", i );
+                $( a ).text( questions[i].answers );
+                $( "#questionsdiv" ).append( a );
                 console.log( questions[i].answers );
-                b.text( questions[i].answers.a )
+                a.text( questions[i].answers.a )
 
                 //button for "b" choice
                 var b = $( "<button>" );
@@ -204,21 +204,22 @@ function setupPage() {
                 console.log( b.text( questions[i].answers.b ) );
 
                 //button for "c" choice
-                var b = $( "<button>" );
-                $( b ).attr( "data-choices" + i );
-                $( b ).attr( "answers", i );
-                $( "#questionsdiv" ).append( b );
-                $( b ).text( questions[i].answers );
-                b.text( questions[i].answers.c )
+                var c = $( "<button>" );
+                $( c ).attr( "data-choices" + i );
+                $( c ).attr( "answers", i );
+                $( "#questionsdiv" ).append( c );
+                $( c ).text( questions[i].answers );
+                c.text( questions[i].answers.c )
 
                 //button for "d" choice
-                var b = $( "<button>" );
-                $( b ).attr( "data-choices" + i );
-                $( b ).attr( "answers", i );
-                $( "#questionsdiv" ).append( b );
-                $( b ).text( questions[i].answers );
-                b.text( questions[i].answers.d )
+                var d = $( "<button>" );
+                $( d ).attr( "data-choices" + i );
+                $( d ).attr( "answers", i );
+                $( "#questionsdiv" ).append( d );
+                $( d ).text( questions[i].answers );
+                d.text( questions[i].answers.d )
             }
+
         }
     }
 }
@@ -256,57 +257,31 @@ function decrement() {
 
 
 //set up logic and button choices to see if selected button is same as answer in object. Remember array instance and object keys
+
 var questionsCorrect = 0;
 var incorrectAnswers = 0;
-var userAnswer = [];
-
-
-
-$( "button" ).on( "click", function () {
-
-    results();
-    console.log();
-
-    console.log( "You clicked a button!" );
-} );
-
-
-//Variables for the game
 
 
 
 
-//results
-function results() {
-    if ( userAnswer === questions.correctAnswer ) {
-        questionsCorrect++;
-        console.log( questionsCorrect );
-        console.log( userAnswer );
+$( "button" ).on( "click", function ( event ) {
 
-    }
-    else {
-        incorrectAnswers++;
-    }
+
+    console.log( event.currentTarget.innerHTML )
+    $( "#answers-div" ).attr( "answers" );
+    $( "#answers-div" ).attr( "answers" );
+    $( "#answers-div" ).append( "<h6> " + event.currentTarget.innerHTML + "</h6>" );
+
+    var userAnswers = [];
+    userAnswers.push( event.currentTarget.innerHTML );
+    console.log( userAnswers );
+    // $( "#answers-div" ).text( "<h6>" + event.currentTarget.innerHTML + "</h6>" );
 }
 
 
 
+);
 
-
-//The user will then answer multiple choice questions
-
-
-
-//When timer gets to 0 game displays
-
-
-//How many questions the user got right
-
-
-//how many they got incorrect (includes quesitons not selected)
-
-
-//The game will then reset
 
 
 

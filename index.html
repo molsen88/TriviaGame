@@ -29,30 +29,38 @@
 
 
 
-        <div class="triviaBox">
+        <div class="triviaBox col">
             <div>
                 <h2 id="rules">Answer the questions below as quickly as you can</h2>
-                <h2 id="timer">01:00</h2>
+                <h2 id="timer">60</h2>
                 <br>
                 <div><button id="start">Start time</button></div>
             </div>
             <br>
             <div id="questionsdiv">
                 <div id="question">
-
                     <div id="choices"></div>
-
-
                 </div>
-
             </div>
         </div>
-        <footer>
-            <button type="button" class="btn btn-outline-warning"><a
-                    href="file:///Users/michaelolsen/dev/uubc/TriviaGame/index.html">Play again!</button>
-        </footer>
-        <script src="./assets/javascript/app.js">
-        </script>
+        <!-- <button type="submit" id="answer" value="great">Submit</button> -->
+
+        <button type="submit" id="submitButton" value="great">Submit</button>
+
+        <div>
+            <div id="answers-div">Answers
+                <div id="answers"></div>
+            </div>
+
+
+
+
+            <footer>
+                <button type="button" class="btn btn-outline-warning"><a
+                        href="file:///Users/michaelolsen/dev/uubc/TriviaGame/index.html">Play again!</button>
+            </footer>
+            <script src="./assets/javascript/app.js">
+            </script>
     </body>
 
 </html>

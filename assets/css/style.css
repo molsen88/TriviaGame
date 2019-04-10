@@ -1,5 +1,5 @@
 body{
-          background: url("../images/RudyGobert.jpeg") no-repeat center;
+          background: url("../images/Mitchell.jpg") no-repeat center;
             
             background-size: cover;
             text-align: -webkit-left;
@@ -41,7 +41,7 @@ button:hover{
     background-color: #F9A01B;
     font-size: 120%;
     color: #00471B;
-    transform: scale(1.1)
+    transform: scale(1.1);
 }
 #jazz{
     font-family: 'Cinzel', serif;
@@ -100,9 +100,17 @@ p{
     text-align: left;
     
 }
+#submitButton{
+    margin: 40px;
+    font-size: 44px;
+    border-radius: 25px;
+    color: #F9A01B;
+    border: 4px #F9A01B solid;
 
-
-
+}
+#submitButton:hover{
+    background-color: #002B5C;
+}
 
 
 footer{
