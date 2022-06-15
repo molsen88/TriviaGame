@@ -20,7 +20,7 @@ var questions = [
             c: "Cal-Berkely",
             d: "Illinois"
         },
-        correctAnswer: "d"
+        correctAnswer: "Illinois"
 
     },
     {
@@ -31,7 +31,7 @@ var questions = [
             c: "Raja Bell",
             d: "Glen Rice"
         },
-        correctAnswer: "b"
+        correctAnswer: "Tom Gugliotta"
 
     },
     {
@@ -42,7 +42,7 @@ var questions = [
             c: "Celtics",
             d: "Lakers"
         },
-        correctAnswer: "a"
+        correctAnswer: "Knicks"
 
     },
     {
@@ -53,7 +53,7 @@ var questions = [
             c: "Warriors",
             d: "Clippers"
         },
-        correctAnswer: "d"
+        correctAnswer: "Clippers"
 
     },
     {
@@ -64,7 +64,7 @@ var questions = [
             c: "Dominique Wilkins",
             d: "Karl Malone"
         },
-        correctAnswer: "c"
+        correctAnswer: "Dominique Wilkins"
 
     },
     {
@@ -75,7 +75,7 @@ var questions = [
             c: "Mark Eaton",
             d: "Jeff Hornacek"
         },
-        correctAnswer: "b"
+        correctAnswer: "Rudy Gobert"
 
     },
     {
@@ -86,7 +86,7 @@ var questions = [
             c: "Iowa",
             d: "Georgia"
         },
-        correctAnswer: "d"
+        correctAnswer: "Georgia"
 
     },
     {
@@ -97,7 +97,7 @@ var questions = [
             c: "11",
             d: "5"
         },
-        correctAnswer: "a"
+        correctAnswer: "8"
 
     },
     {
@@ -108,7 +108,7 @@ var questions = [
             c: "76ers",
             d: "Warriors"
         },
-        correctAnswer: "c"
+        correctAnswer: "76ers"
 
     },
     {
@@ -119,7 +119,7 @@ var questions = [
             c: "Trey Lyles",
             d: "Jamal Murray"
         },
-        correctAnswer: "b"
+        correctAnswer: "Tyler Lydon"
 
     },
     {
@@ -130,7 +130,7 @@ var questions = [
             c: "Hawks",
             d: "CSKA Moscow"
         },
-        correctAnswer: "c"
+        correctAnswer: "Hawks"
 
     },
     {
@@ -141,7 +141,7 @@ var questions = [
             c: "Paul Millsap",
             d: "CJ Miles"
         },
-        correctAnswer: "a"
+        correctAnswer: "Robert Whaley"
 
     },
     {
@@ -152,7 +152,7 @@ var questions = [
             c: "Bobby Williams",
             d: "Ricky Bobby"
         },
-        correctAnswer: "b"
+        correctAnswer: "Torrey Ellis"
 
     },
     {
@@ -163,11 +163,13 @@ var questions = [
             c: "Mehmet Okur",
             d: "Andrei Kirilenko"
         },
-        correctAnswer: "d"
+        correctAnswer: "Andrei Kirilenko"
 
     },
 
 ]
+
+var correctAnswers = [];
 setupPage();
 
 
@@ -181,9 +183,13 @@ function setupPage() {
         $( p ).attr( "data-number", i );
         $( p ).html( "<br>" + questions[i].question + "<br>" );
         $( "#questionsdiv" ).append( p );
-        console.log( questions[i].question ); {
+        // console.log( questions[i].question );
+        {
             for ( let i = 0; i < questions[i].answers.length; i++ )
-                console.log( questions[i].answers.length ); {
+                console.log(questions[i])
+                correctAnswers.push( questions[i].correctAnswer )
+                 {
+                
 
                 //button for "a" choice
                 var a = $( "<button>" );
@@ -191,7 +197,7 @@ function setupPage() {
                 $( a ).attr( "answers", i );
                 $( a ).text( questions[i].answers );
                 $( "#questionsdiv" ).append( a );
-                console.log( questions[i].answers );
+                // console.log( questions[i].answers );
                 a.text( questions[i].answers.a )
 
                 //button for "b" choice
@@ -201,7 +207,7 @@ function setupPage() {
                 $( "#questionsdiv" ).append( b );
                 $( b ).text( questions[i].answers );
                 b.text( questions[i].answers.b )
-                console.log( b.text( questions[i].answers.b ) );
+                // console.log( b.text( questions[i].answers.b ) );
 
                 //button for "c" choice
                 var c = $( "<button>" );
@@ -219,11 +225,13 @@ function setupPage() {
                 $( d ).text( questions[i].answers );
                 d.text( questions[i].answers.d )
             }
-
         }
+
     }
+
 }
 
+console.log(correctAnswers)
 
 
 
@@ -238,15 +246,13 @@ function run() {
     clearInterval( IntervalId );
     IntervalId = setInterval( decrement, 1000 );
 }
+
 function decrement() {
     number--;
     $( "#timer" ).html( "<h2>" + number + "</h2>" );
     if ( number === 0 ) {
         alert( "Shot Clock Violation!" );
         stop();
-
-
-
     }
 
     function stop() {
@@ -260,6 +266,7 @@ function decrement() {
 
 var questionsCorrect = 0;
 var incorrectAnswers = 0;
+var userAnswers = [];
 
 
 
@@ -267,22 +274,34 @@ var incorrectAnswers = 0;
 $( "button" ).on( "click", function ( event ) {
 
 
-    console.log( event.currentTarget.innerHTML )
+    console.log( event.currentTarget )
     $( "#answers-div" ).attr( "answers" );
     $( "#answers-div" ).attr( "answers" );
-    $( "#answers-div" ).append( "<h6> " + event.currentTarget.innerHTML + "</h6>" );
+    $( event.currentTarget ).css( "background-color", "red" );
 
-    var userAnswers = [];
+    
+    // $( "#answers-div" ).append( "<h6> " + event.currentTarget.innerHTML + "</h6>" );
+
+   
     userAnswers.push( event.currentTarget.innerHTML );
     console.log( userAnswers );
     // $( "#answers-div" ).text( "<h6>" + event.currentTarget.innerHTML + "</h6>" );
 }
 
-
-
 );
 
+let wrong = 0;
 
+$( "#submitButton" ).on( "click", function () {
+    clearInterval(IntervalId)
+    for ( let i = 0; i < correctAnswers.length; i++ ){
+        if ( correctAnswers[i] !== userAnswers[i] ) {
+            wrong=wrong+1
+        }
+        wrong=wrong
+    }
+    alert(wrong)
+})
 
 
 
